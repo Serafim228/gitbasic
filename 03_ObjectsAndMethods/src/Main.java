@@ -1,8 +1,10 @@
 public class Main {
 
     public static void main(String[] args) {
-        Basket basket = new Basket();
-        basket.add("Milk", 40);
-        basket.print("Milk");
+    	Book russia = new Book("Hui","213232", 22,323);
+    
+    	System.out.println(russia.getName()+ "\n"+ russia.getAutor()
+    			);
+
     }
 }
