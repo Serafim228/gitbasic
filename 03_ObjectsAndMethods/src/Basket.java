@@ -4,11 +4,14 @@ public class Basket {
     private String items = "";
     private int totalPrice = 0;
     private int limit;
+    public static int allCount = 0;
+    public static int allPrice = 0;
 
     public Basket() {
         increaseCount(1);
         items = "Список товаров:";
         this.limit = 1000000;
+        
     }
 
     public Basket(int limit) {
@@ -21,6 +24,22 @@ public class Basket {
         this.items = this.items + items;
         this.totalPrice = totalPrice;
     }
+    
+    public static void increaseAllCount(int a) {
+    	Basket.allCount += a;
+    }
+    
+    public static void increaseAllPrice(int a) {
+    	Basket.allPrice += a;
+    }
+    
+    public static int getAveragePrice() {
+    	return allPrice / allCount;
+    }
+    
+    public static int getAverageBasketPrice() {
+    	return allPrice/ count;
+    }
 
     public static int getCount() {
         return count;
@@ -32,6 +51,7 @@ public class Basket {
 
     public void add(String name, int price) {
         add(name, price, 1);
+        
     }
 
     public void add(String name, int price, int count) {
@@ -48,10 +68,11 @@ public class Basket {
             System.out.println("Error occured :(");
             return;
         }
-
+        increaseAllCount(count);
         items = items + "\n" + name + " - " +
             count + " шт. - " + price;
         totalPrice = totalPrice + count * price;
+        increaseAllPrice(count * price);
     }
 
     public void clear() {
