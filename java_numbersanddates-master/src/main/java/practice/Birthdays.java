@@ -19,7 +19,7 @@ public class Birthdays {
     public static String collectBirthdays(int year, int month, int day) {
     	String birthday1 = day + "/"+ month + "/"+ year ;
     	LocalDate today = LocalDate.now();
-    	DateTimeFormatter form = DateTimeFormatter.ofPattern("yyyy/MM/dd");
+    	DateTimeFormatter form = DateTimeFormatter.ofPattern("dd/MM/yyyy ");
     	LocalDate birthday = LocalDate.parse(birthday1, form);
     	int years = 0;
     	String text = "";
