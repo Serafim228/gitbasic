@@ -1,9 +1,8 @@
 package practice;
 
 public class Main {
-
+	
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		System.out.println(GeometryCalculator.getCircleSquare(15));
 		System.out.println(GeometryCalculator.getCircleSquare(-5));
 		System.out.println(GeometryCalculator.getTriangleSquare(5,5,5));
